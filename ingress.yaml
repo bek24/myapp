@@ -31,20 +31,3 @@ spec:
   ports:
     - protocol: TCP
       port: 80
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: webapp1-ingress 
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
-    traefik.frontend.rule.type: PathPrefixStrip
-spec:
-  rules:
-  - host: mywebsite.com
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: webappservice1 
-          servicePort: 80
