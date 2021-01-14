@@ -3,8 +3,7 @@ name: image-build
 on:
   push:
     branches: [ master ]
-    paths:
-    - 'docker/*'
+    paths: [ docker/* ]
 
 jobs:
   build:
